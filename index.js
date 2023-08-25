@@ -7,9 +7,9 @@ const cors=require('cors')
 app.use(bodyParser.json())
 const messageRoute=require('./Routes/MessageRoute')
 
-const ori=process.env.ORIGIN || 'http://localhost:4200'
+const ori=process.env.ORIGIN || 'https://akashchaudhary-6be0a.web.app'
 
-app.use(cors({origin:ori}))
+app.use(cors({origin:'https://akashchaudhary-6be0a.web.app'}))
 
 
 const PORT =process.env.PORT || 3000;
