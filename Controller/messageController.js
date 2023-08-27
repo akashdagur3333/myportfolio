@@ -35,4 +35,26 @@ const addMessage=(req,res)=>{
     )
 }
 
-module.exports={addMessage}
+const getMessage=(req,res)=>{
+    Message.find((err,docs)=>{
+        if(err){
+            res.json(err)
+        }
+        else{
+            res.json(docs)
+        }
+    })
+}
+
+const deleteMessage=(req,res)=>{
+    Message.findByIdAndDelete(req.params.id,(err,docs)=>{
+        if(!err){
+            res.json(docs)
+        }
+        else{
+            res.json(err)
+        }
+    })
+}
+
+module.exports={addMessage,getMessage,deleteMessage}
